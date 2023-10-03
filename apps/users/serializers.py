@@ -16,6 +16,7 @@ from apps.users.services.email import ActivationEmail
 
 error_messages = Messages()
 
+
 class UserRegisterModelSerializer(serializers.ModelSerializer):
     fullname = serializers.CharField(max_length=150, write_only=True)
     email = serializers.EmailField(write_only=True)
@@ -61,6 +62,7 @@ class UserRegisterCashedModelSerializer(serializers.ModelSerializer):
         )
         return super().validate(attrs)
 
+
 class UserRetrieveUpdateDestroyModelSerializer(serializers.ModelSerializer):
     class Meta:
         model = User
@@ -97,6 +99,7 @@ class PasswordResetConfirmSerializer(serializers.Serializer):
     activation_code = serializers.IntegerField(write_only=True)
     email = serializers.EmailField(write_only=True)
     new_password = serializers.CharField(max_length=150, write_only=True)
+
     # confirm_password = serializers.CharField(max_length=150, write_only=True)
 
     def validate(self, attrs):

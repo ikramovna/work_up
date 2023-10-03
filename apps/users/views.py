@@ -7,8 +7,8 @@ from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
 from apps.users.models import User
-from apps.users.serializers import UserRegisterCashedModelSerializer, UserRetrieveUpdateDestroyModelSerializer, \
-    CheckActivationCode, SendEmailResetSerializer, PasswordResetConfirmSerializer
+from apps.users.serializers import (UserRegisterCashedModelSerializer, UserRetrieveUpdateDestroyModelSerializer,
+                                    CheckActivationCode, SendEmailResetSerializer, PasswordResetConfirmSerializer)
 from apps.users.services.cache_functions import getKey
 
 
@@ -52,7 +52,6 @@ class CheckActivationCodeGenericAPIView(GenericAPIView):
             'refresh': str(token),
         }
         return Response(response, status=status.HTTP_200_OK)
-
 
 
 class PasswordResetGenericAPIView(GenericAPIView):
