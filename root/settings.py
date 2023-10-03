@@ -15,7 +15,7 @@ ALLOWED_HOSTS = ['*']
 
 MY_APPS = [
     'apps.tasks',
-    'users',
+    'apps.users',
 ]
 
 THIRD_PARTY_APPS = [

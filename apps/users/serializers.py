@@ -6,13 +6,13 @@ from django.core.mail import send_mail
 from rest_framework import serializers
 
 from root.settings import EMAIL_HOST_USER
-from users.models import User
-from users.services.cache_functions import setKey, getKey, deleteKey
+from apps.users.models import User
+from apps.users.services.cache_functions import setKey, getKey
 
 from django.contrib.auth.password_validation import validate_password
 from django.core.exceptions import ValidationError
-from users.services.validations_errors import Messages
-from users.services.email import ActivationEmail
+from apps.users.services.validations_errors import Messages
+from apps.users.services.email import ActivationEmail
 
 error_messages = Messages()
 

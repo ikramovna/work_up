@@ -14,8 +14,8 @@ urlpatterns = [
 
     path('admin/', admin.site.urls),
 
-    path('users/', include('users.urls')),
-    path('', include('apps.task.urls')),
+    path('users/', include('apps.users.urls')),
+    path('', include('apps.tasks.urls')),
 
     path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
 ]

@@ -5,10 +5,10 @@ from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
 
-from users.models import User
-from users.serializers import UserRegisterCashedModelSerializer, UserRetrieveUpdateDestroyModelSerializer, \
+from apps.users.models import User
+from apps.users.serializers import UserRegisterCashedModelSerializer, UserRetrieveUpdateDestroyModelSerializer, \
     CheckActivationCode, SendEmailResetSerializer, PasswordResetConfirmSerializer
-from users.services.cache_functions import getKey
+from apps.users.services.cache_functions import getKey
 
 
 # Create your views here.
