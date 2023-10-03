@@ -1,6 +1,7 @@
 from django.contrib.auth.hashers import make_password
 from rest_framework import status
 from rest_framework.generics import CreateAPIView, RetrieveAPIView, GenericAPIView
+from rest_framework.parsers import FormParser, MultiPartParser
 from rest_framework.permissions import IsAuthenticated, AllowAny
 from rest_framework.response import Response
 from rest_framework_simplejwt.tokens import RefreshToken
@@ -16,6 +17,7 @@ from apps.users.services.cache_functions import getKey
 
 class UserRegisterCashedCreateAPIView(CreateAPIView):
     serializer_class = UserRegisterCashedModelSerializer
+    parser_classes = [FormParser, MultiPartParser]
 
     def create(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -27,7 +29,7 @@ class UserRegisterCashedCreateAPIView(CreateAPIView):
 class UserRetrieveAPIView(RetrieveAPIView):
     queryset = User.objects.all()
     serializer_class = UserRetrieveUpdateDestroyModelSerializer
-    # parser_classes = [FormParser, MultiPartParser]
+    parser_classes = [FormParser, MultiPartParser]
     permission_classes = [IsAuthenticated]
 
     def get_object(self):
@@ -36,6 +38,7 @@ class UserRetrieveAPIView(RetrieveAPIView):
 
 class CheckActivationCodeGenericAPIView(GenericAPIView):
     serializer_class = CheckActivationCode
+    parser_classes = [FormParser, MultiPartParser]
 
     def post(self, request, *args, **kwargs):
         serializer = self.get_serializer(data=request.data)
@@ -54,7 +57,7 @@ class CheckActivationCodeGenericAPIView(GenericAPIView):
 
 class PasswordResetGenericAPIView(GenericAPIView):
     serializer_class = SendEmailResetSerializer
-    # parser_classes = (FormParser, MultiPartParser)
+    parser_classes = (FormParser, MultiPartParser)
     permission_classes = (AllowAny,)
 
     def post(self, request, *args, **kwargs):
@@ -66,7 +69,7 @@ class PasswordResetGenericAPIView(GenericAPIView):
 
 class PasswordResetConfirmUpdateAPIView(GenericAPIView):
     serializer_class = PasswordResetConfirmSerializer
-    # parser_classes = (FormParser, MultiPartParser)
+    parser_classes = (FormParser, MultiPartParser)
     permission_classes = (AllowAny,)
 
     def patch(self, request, *args, **kwargs):

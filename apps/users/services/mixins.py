@@ -1,8 +1,8 @@
 from rest_framework import status
+from rest_framework.generics import GenericAPIView
 from rest_framework.response import Response
 from rest_framework.settings import api_settings
-from rest_framework.generics import GenericAPIView
-from rest_framework.generics import GenericAPIView
+
 
 class SendEmailActivationCodeMixin:
     def send_email(self, request):
