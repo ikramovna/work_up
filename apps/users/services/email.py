@@ -1,6 +1,6 @@
 import random
 from templated_mail.mail import BaseEmailMessage
-from users.services.cache_functions import setKey
+from apps.users.services.cache_functions import setKey
 
 
 class ActivationEmail(BaseEmailMessage):

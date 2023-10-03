@@ -6,7 +6,7 @@ from django.contrib.auth.validators import UnicodeUsernameValidator
 from django.contrib.auth.models import AbstractBaseUser, PermissionsMixin
 from django.db.models import CharField, EmailField, BooleanField, DateTimeField
 
-from users.models.manager import BaseManagerUser
+from apps.users.models.manager import BaseManagerUser
 
 
 class BaseAbstractUser(AbstractBaseUser, PermissionsMixin):
