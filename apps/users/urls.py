@@ -1,4 +1,5 @@
 from django.urls import path
+from rest_framework_simplejwt.views import TokenRefreshView
 
 from apps.users.views import UserRegisterCashedCreateAPIView, UserRetrieveAPIView, CheckActivationCodeGenericAPIView, \
     PasswordResetGenericAPIView, PasswordResetConfirmUpdateAPIView
@@ -11,5 +12,6 @@ urlpatterns = [
     path('reset-passwd', PasswordResetGenericAPIView.as_view(), name='reset_passwd'),
     path('reset-passwd-confirm', PasswordResetConfirmUpdateAPIView.as_view(), name='reset_passwd_confirm'),
 
+    path('token/refresh', TokenRefreshView.as_view(), name='token_refresh'),
 
 ]

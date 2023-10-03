@@ -6,8 +6,8 @@ class BaseModel(Model):
     updated_at = DateTimeField(auto_now=True)
 
     full_name = CharField(max_length=255)
-    contact = CharField(max_length=255)
     technologies = CharField(max_length=255)
+    contact = CharField(max_length=255)
     area = CharField(max_length=255)
     salary = CharField(max_length=255)
     time_apply = CharField(max_length=255)
