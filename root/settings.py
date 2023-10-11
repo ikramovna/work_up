@@ -22,6 +22,7 @@ THIRD_PARTY_APPS = [
     'drf_yasg',
     'rest_framework',
     'rest_framework_simplejwt',
+
 ]
 
 INSTALLED_APPS = [
@@ -32,7 +33,7 @@ INSTALLED_APPS = [
      'django.contrib.messages',
      'django.contrib.staticfiles',
 
- ] + MY_APPS + THIRD_PARTY_APPS
+] + MY_APPS + THIRD_PARTY_APPS
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

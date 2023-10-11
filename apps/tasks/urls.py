@@ -1,7 +1,7 @@
 from django.urls import path
 
-from apps.tasks.views import ResumeListAPIView, VacancyListAPIView, ResumeUpdateAPIViewDestroyAPIView, \
-    VacancyUpdateAPIViewDestroyAPIView
+from apps.tasks.views import (ResumeListAPIView, VacancyListAPIView, ResumeUpdateAPIViewDestroyAPIView,
+                              VacancyUpdateAPIViewDestroyAPIView)
 
 urlpatterns = [
     path('resume', ResumeListAPIView.as_view()),
